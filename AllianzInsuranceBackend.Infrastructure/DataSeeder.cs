@@ -16,8 +16,9 @@ namespace AllianzInsuranceBackend.Infrastructure
            
         }
 
-        public static async void SeedData(AppDbContext context)
+        public static async Task SeedData(AppDbContext context)
         {
+            int value = context.Cars.Count();
             var cars = new List<Car>
             {
                 new Car

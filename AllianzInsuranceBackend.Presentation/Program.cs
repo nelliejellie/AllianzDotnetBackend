@@ -67,9 +67,9 @@ namespace AllianzInsuranceBackend.Presentation
                 var services = servicescope.ServiceProvider;
                 var _context = services.GetRequiredService<AppDbContext>();
 
-
-                DataSeeder.SeedData(_context);
                 _context.Database.Migrate();
+                DataSeeder.SeedData(_context).Wait();
+                
                
 
             }
